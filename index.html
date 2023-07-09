@@ -408,34 +408,16 @@
     <script>
         var menu = document.getElementById("menu");
         var nav = document.querySelector(".nav");
-        var li = document.querySelector(".nav ul li");
-        // var yes = document.querySelector(".nav ul li .yes");
-        // var no = document.querySelector(".nav ul li .no");
-        // var tes = document.querySelector(".nav ul li .tes");
-        // var abou = document.querySelector(".nav ul li .abou");
+        var li = document.querySelectorAll(".nav ul li a");
 
         nav.style.right = "-100%";
 
-        li.onclick = function (e) {
-            e.target = nav.style.right = "-100%";
-            menu.src = "img/icons8-menu-30.png";
-        }
-        // yes.onclick = function () {
-        //     nav.style.right = "-100%";
-        //     menu.src = "img/icons8-menu-30.png";
-        // }
-        // no.onclick = function () {
-        //     nav.style.right = "-100%";
-        //     menu.src = "img/icons8-menu-30.png";
-        // }
-        // tes.onclick = function () {
-        //     nav.style.right = "-100%";
-        //     menu.src = "img/icons8-menu-30.png";
-        // }
-        // abou.onclick = function () {
-        //     nav.style.right = "-100%";
-        //     menu.src = "img/icons8-menu-30.png";
-        // }
+        li.forEach((link)=>{
+            link.onclick = (e)=> {
+                nav.style.right = "-100%";
+                menu.src = "img/icons8-menu-30.png";
+            }
+        })
 
         menu.onclick = function () {
             if (nav.style.right == "-100%") {
